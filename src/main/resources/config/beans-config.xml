@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<bean id="articleDao" class="com.stock.de.dao.impl.ArticleDaoImpl"/>
+		<bean id="articleDaoService" class="com.stock.de.services.impl.ArticleServiceImpl">
+			<property name="dao" ref="articleDao"></property>
+		</bean>
+		<bean id="categorieDao" class="com.stock.de.dao.impl.CategorieDaoImpl"/>
+		<bean id="categorieDaoService" class="com.stock.de.services.impl.CategorieServiceImpl">
+			<property name="dao" ref="categorieDao"></property>
+		</bean>
+
+</beans>
