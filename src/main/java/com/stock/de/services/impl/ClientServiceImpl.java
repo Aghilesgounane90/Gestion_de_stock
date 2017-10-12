@@ -4,39 +4,39 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stock.de.dao.ICategorieDao;
-import com.stock.de.entites.Categorie;
-import com.stock.de.services.ICategorieService;
+import com.stock.de.dao.IClientDao;
+import com.stock.de.entites.Client;
+import com.stock.de.services.IClientService;
 
 @Transactional
-public class CategorieServiceImpl implements ICategorieService {
+public class ClientServiceImpl implements IClientService {
 
-	private ICategorieDao dao;
-	public void setDao(ICategorieDao dao) {
+	private IClientDao dao;
+	public void setDao(IClientDao dao) {
 		this.dao = dao;
 	}
 	@Override
-	public Categorie save(Categorie entity) {
+	public Client save(Client entity) {
 		return dao.save(entity);
 	}
 
 	@Override
-	public Categorie update(Categorie entity) {
+	public Client update(Client entity) {
 		return dao.update(entity);
 	}
 
 	@Override
-	public List<Categorie> selectAll() {
+	public List<Client> selectAll() {
 		return dao.selectAll();
 	}
 
 	@Override
-	public List<Categorie> selectAll(String sortField, String sort) {
+	public List<Client> selectAll(String sortField, String sort) {
 		return dao.selectAll(sortField, sort);
 	}
 
 	@Override
-	public Categorie getById(Long id) {
+	public Client getById(Long id) {
 		return dao.getById(id);
 	}
 
@@ -46,12 +46,12 @@ public class CategorieServiceImpl implements ICategorieService {
 	}
 
 	@Override
-	public Categorie findOne(String paramName, Object paramValue) {
+	public Client findOne(String paramName, Object paramValue) {
 		return dao.findOne(paramName, paramValue);
 	}
 
 	@Override
-	public Categorie findOne(String[] paramNames, Object[] paramValues) {
+	public Client findOne(String[] paramNames, Object[] paramValues) {
 		return dao.findOne(paramNames, paramValues);
 	}
 
@@ -60,5 +60,4 @@ public class CategorieServiceImpl implements ICategorieService {
 		return dao.findCountBy(paramName, paramValue);
 	}
 
-    
 }
