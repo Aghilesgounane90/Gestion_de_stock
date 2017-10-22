@@ -15,7 +15,4 @@ public class FlickrServiceImpl implements IFlackrService {
 	public String savePhoto(InputStream photo, String title) throws Exception {
 		return dao.savePhoto(photo, title);
 	}
-	
-	
-
 }
